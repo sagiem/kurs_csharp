@@ -27,12 +27,34 @@ namespace Задание_22
                 return;
             }
 
-            if ((A1 > A2 && A1 < B2) || (B1 > A2 && B1 < B2))
+            if (A2 > A1 && A2 < B1)
             {
-                
+                if (B1 > A2 && B1 < B2)
+                {
+                    Console.WriteLine("Пересекаются ({0};{1})", A2, B1);
+                    return;
+                }
+
+                if (B2 > A1 && B2 < B1)
+                {
+                    Console.WriteLine("Пересекаются ({0};{1})", A2, B2);
+                    return;
+                }
             }
 
+            if(A1>A2&&A1<B2&&B2>A1&&B2<B1)
+            {
+                Console.WriteLine("Пересекаются ({0};{1})", A1, B2);
+                return;
+            }
 
+            if(A1>A2&&A1<B2&&B1>A2&&B1<B2)
+            {
+                Console.WriteLine("Пересекаются ({0};{1})", A1,B1);
+                return;
+            }
+
+            Console.WriteLine("не пересекаются");
 
         }
     }
