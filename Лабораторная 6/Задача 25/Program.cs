@@ -10,20 +10,20 @@ namespace Задача_25
     {
         static void Main(string[] args)
         {
-            int H, W, i=0, q=0, z=0;
+            int H, W, i=0, q=0, z=0, y=0;
 
             Console.WriteLine("Введите H");
             H = int.Parse(Console.ReadLine());
             Console.WriteLine("Введите W");
             W = int.Parse(Console.ReadLine());
 
-
+            y = H;
             z = H;
             
             
             while(i<W)
             {
-                while(q<H)
+                while(q<y)
                 {
                     Console.Write("+");
 
@@ -31,7 +31,7 @@ namespace Задача_25
                 }
                 
 
-                while(z>H)
+                while(z>y)
                 {
                     Console.Write("#");
 
@@ -39,9 +39,10 @@ namespace Задача_25
 
                 }
 
-                H--;
+                y--;
                 i++;
                 q = 0;
+                z = H;
                 
                 
                 Console.WriteLine();
