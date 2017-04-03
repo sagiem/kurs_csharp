@@ -5,19 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Задача_1
+namespace Задача_6
 {
     class Program
     {
         static void Main(string[] args)
-
         {
 
             Console.WriteLine("Введите номер теста");
             string index = Console.ReadLine();
-            string filename = "test" + index + ".txt";
+            string filename = "test" + index + ".csv";
+            string a;
+            int x = 0;
+            int y = 0;
 
-            if(! File.Exists(filename))
+            if (!File.Exists(filename))
             {
                 Console.WriteLine("Сообщение об ошибке");
                 return;
@@ -25,17 +27,21 @@ namespace Задача_1
 
             StreamReader reader = new StreamReader(filename);
 
-            if(!reader.EndOfStream)
+            while (!reader.EndOfStream)
             {
-                Console.Write(reader.ReadLine());
-            }
-           
-            while(!reader.EndOfStream)
-            {
-                Console.Write(", " + reader.ReadLine());
+                a = reader.ReadLine();
+                string[] arr = a.Split(';');
+
+                x = int.Parse(arr[2]) * int.Parse(arr[3]);
+
+                if(x>y)
+                {
+                    y = x;
+                }
+
             }
 
-            reader.Close();
+            Console.WriteLine(y);
         }
     }
 }
