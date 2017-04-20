@@ -56,12 +56,33 @@ namespace Задача_1
             task2959("123456789");
             task2959("fa93f");
 
+            Console.WriteLine("task7271");
+
+            task7271(5, 7);
+            task7271(-1, 1000);
+
+            Console.WriteLine("task2632");
+
+            task2632(50, 50, 40, "yellow");
+            task2632(400, 300, 200, "green");
+            task2632(254, 356, 100, "#cc6600");
+
+            Console.WriteLine("task4343");
+
+            task4343("test", "pass", "localhost", "5432", "my_db");
+            task4343(
+                "admin",
+                "7e8efd48d69c",
+                "production-node1",
+                "5432", "bank");
+            task4343("akryukov", "123", "localhost", "dev-node1", "bank");
+
 
         }
 
         static void task1860(string a)
         {
-            Console.WriteLine("Мы стремимся к "+a);
+            Console.WriteLine("Мы стремимся к " + a);
         }
 
         static void task4764(string a)
@@ -71,38 +92,57 @@ namespace Задача_1
 
         static void task2429(string a)
         {
-            Console.WriteLine("Программирование это "+a);
+            Console.WriteLine("Программирование это " + a);
         }
 
 
 
         static void task7472(string a, string b)
         {
-            Console.WriteLine(b+" "+a);
+            Console.WriteLine(b + " " + a);
         }
 
         static void task2862()
         {
-            Console.WriteLine("{0:N4}",Math.PI);
-            Console.WriteLine("{0:N4}",Math.E);
+            Console.WriteLine("{0:N4}", Math.PI);
+            Console.WriteLine("{0:N4}", Math.E);
         }
 
         static void task9231(double a)
         {
-            Console.WriteLine("{0:N4}",a);
+            Console.WriteLine("{0:N4}", a);
         }
 
         static void task8624(int a)
         {
-            Console.WriteLine("\"{0}\"",a);
+            Console.WriteLine("\"{0}\"", a);
         }
 
         static void task2959(string a)
         {
-            Console.WriteLine("SELECT first_name, last_name, group FROM students WHERE student_id = '{0}'",a);
+            Console.WriteLine("SELECT first_name, last_name, group FROM students WHERE student_id = '{0}'", a);
         }
-    
 
-    
+
+        static void task7271(int x, int y)
+        {
+            Console.WriteLine("INSERT INTO points (x, y) VALUES ('{0}','{1}');", x, y);
+        }
+
+
+        static void task2632(int cx, int cy, int r, string fill)
+        {
+            Console.WriteLine("<circle cx=\"{0}\" cy=\"{1}\" r=\"{2}\" fill=\"{3}\"/>", cx, cy, r, fill);
+        }
+
+        static void task4343(string user, string pass, string host, string port, string db)
+        {
+            Console.WriteLine("User ID={0};Password={1};Host={2};Port={3};Database={4};", user, pass, host, port, db);
+        }
+
+
+
     }
+
+
 }
