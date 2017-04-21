@@ -113,6 +113,33 @@ namespace Задача_2
             Console.WriteLine(task5980(0) - 0.0);
             Console.WriteLine(task5980(-7) - 49.0);
 
+            Console.WriteLine("task8174");
+            Console.WriteLine(task8174(-5) - 5);
+            Console.WriteLine(task8174(-11) - 11);
+            Console.WriteLine(task8174(7) - 7);
+            Console.WriteLine(task8174(13) - 13);
+            Console.WriteLine(task8174(0));
+
+            Console.WriteLine("task5662");
+            Console.WriteLine(task5662(1, 2, 3));
+            Console.WriteLine(task5662(3, 17, 5));
+            Console.WriteLine(task5662(3, 6, 3));
+            Console.WriteLine(task5662(0, 7, 13));
+
+            Console.WriteLine("task3770");
+            Console.WriteLine(task3770(1, 2, 3) - 3);
+            Console.WriteLine(task3770(7, 4, -2) - 7);
+            Console.WriteLine(task3770(0, 5, -7) - 5);
+
+            Console.WriteLine("task2475");
+            Console.WriteLine(task2475() - 120300);
+
+            Console.WriteLine("task9562");
+            Console.WriteLine(task9562(15, 27) - 273);
+            Console.WriteLine(task9562(25, 44) - 690);
+            Console.WriteLine(task9562(80, 100) - 1890);
+            Console.WriteLine(task9562(3000, 24) - 4501224);
+
             Console.WriteLine("task3669");
             Console.WriteLine(task3669(8, 13) - 1235520);
             Console.WriteLine(task3669(159, 161) - 4095840);
@@ -120,12 +147,11 @@ namespace Задача_2
             Console.WriteLine(task3669(-2, 600));
             Console.WriteLine(task3669(50, 24) - 2421409269157986304L);
 
-            Console.WriteLine("task5662");
-            Console.WriteLine(task5662(1, 2, 3));
-            Console.WriteLine(task5662(3, 17, 5));
-            Console.WriteLine(task5662(3, 6, 3));
-            Console.WriteLine(task5662(0, 7, 13));
         }
+
+
+
+
 
         static double task4411(double a)
         {
@@ -134,7 +160,7 @@ namespace Задача_2
 
         static int task3832(int x1, int x2, int x3)
         {
-            return x1*x2 + x1*x3 + x2*x3;
+            return x1 * x2 + x1 * x3 + x2 * x3;
         }
 
         static double task8428(double A)
@@ -148,14 +174,14 @@ namespace Задача_2
 
             int m;
             return m = a % 360;
-           
+
         }
 
         static double task7711(int a)
-    {
+        {
             double r = Math.Sin(a * Math.PI / 180);
             return r;
-    }
+        }
         static double task3832(double x1, double x2, double x3)
         {
             double R = x1 * x2 + x1 * x3 + x2 * x3;
@@ -218,7 +244,7 @@ namespace Задача_2
             return R;
         }
 
-        static double task4366(double x1, double x2 )
+        static double task4366(double x1, double x2)
         {
             double R = Math.Sqrt(x2 * x2 + x1 * x1);
             return R;
@@ -232,7 +258,7 @@ namespace Задача_2
 
         static double task5980(double a)
         {
-            if(a>0)
+            if (a > 0)
             {
                 a = Math.Sqrt(a);
             }
@@ -240,6 +266,17 @@ namespace Задача_2
             else
             {
                 a = a * a;
+            }
+
+            return a;
+
+        }
+
+        static double task8174(double a)
+        {
+            if (a < 0)
+            {
+                a = a * (-1);
             }
 
             return a;
@@ -264,7 +301,7 @@ namespace Задача_2
                 b = c;
             }
 
-        
+
 
 
             long s = 1;
@@ -282,30 +319,90 @@ namespace Задача_2
         {
             int d = b * b - 4 * a * c;
 
-            if(a==0)
+            if (a == 0)
             {
                 return "Данное уравнение не является квадратным";
             }
 
-            if(d>0)
+            if (d > 0)
             {
-                return string.Format("У уравнения {0}x^2 + {1}x + {2} = 0 два вещественных корня", a,b,c);
+                return string.Format("У уравнения {0}x^2 + {1}x + {2} = 0 два вещественных корня", a, b, c);
             }
 
-         
 
-            if(d<0)
+
+            if (d < 0)
             {
-                return string.Format("Вещественных корней уравнения {0}x^2 + {1}x + {2} = 0 нет",a,b,c);
+                return string.Format("Вещественных корней уравнения {0}x^2 + {1}x + {2} = 0 нет", a, b, c);
             }
 
-            return string.Format("Уравнение {0}x^2 + {1}x + {2} = 0 имеет один корень",a,b,c);
+            return string.Format("Уравнение {0}x^2 + {1}x + {2} = 0 имеет один корень", a, b, c);
 
-            
+
         }
 
+        static double task3770(double x, double y, double z)
+        {
+            double q = 0;
+
+            if (x > y && x > z)
+            {
+                q = x;
+            }
+
+            if (y > x && y > z)
+            {
+                q = y;
+            }
+
+            if (z > x && z > y)
+            {
+                q = z;
+            }
+
+            return q;
+        }
+
+        static int task2475()
+        {
+            int n = 100;
+            int a = 0;
+
+            while (n <= 500)
+            {
+                a = a + n;
+                n++;
+            }
+
+            return a;
+        }
+
+        static int task9562(int a, int b)
+        {
+            int s = 0;
 
 
-        
+            if (b < a)
+            {
+                while (b <= a)
+                {
+                    s = b + s;
+                    b++;
+                }
+            }
+
+
+            else
+            {
+                while (a <= b)
+                {
+                    s = a + s;
+                    a++;
+                }
+            }
+            return s;
+        }
     }
+
 }
+
