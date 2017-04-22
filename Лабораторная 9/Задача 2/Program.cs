@@ -14,33 +14,45 @@ namespace Задача_2
             Console.WriteLine("Введите номер теста");
             string index = Console.ReadLine();
             string filename = "test" + index + ".txt";
-            
-
 
             if (!File.Exists(filename))
             {
-                Console.WriteLine("Сообщение об ошибке");
+                Console.WriteLine("Файл не существует");
                 return;
             }
 
-            StreamReader reader = new StreamReader(filename);
+            try
+            {
+                using (StreamReader reader = new StreamReader(filename))
+                {
+                    decimal p = task0000(reader);
+                    Console.WriteLine("{0:N4}", p);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static decimal task0000(StreamReader reader)
+        {
             decimal n = int.Parse(reader.ReadLine());
             decimal b = 0;
             decimal x = 0;
             int m = 0;
             int k = 0;
 
-            if(n==0)
+            if (n == 0)
             {
-                Console.WriteLine("Сообщение об ошибке");
-                return;
+                return 0;
             }
 
-            while(!reader.EndOfStream)
+            while (!reader.EndOfStream)
             {
                 b = decimal.Parse(reader.ReadLine());
 
-                if(b<=20)
+                if (b <= 20)
                 {
                     x = x + b;
                     m++;
@@ -51,11 +63,13 @@ namespace Задача_2
             if (k == n)
             {
                 n = x / m;
-
-                Console.WriteLine("{0:N5}", n);
+                return n;
             }
-
-            else { Console.WriteLine("Сообщение об ошибке"); return; }
+            else
+            {
+                Exception e = new Exception("Некорректный объем данных");
+                throw e;
+            }
         }
     }
 }

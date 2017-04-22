@@ -13,59 +13,72 @@ namespace Задача_5
         {
 
             string filename;
-            string b;
-            int m = 0;
+
+            
 
             Console.WriteLine("Введите номер теста");
-            int a = int.Parse(Console.ReadLine());
-            
-            if(a<1||a>5)
+           filename = "test"+Console.ReadLine()+".txt";
+
+            try
             {
-                Console.WriteLine("Сообщение об ошибке");
+                using (StreamReader reader = new StreamReader(filename))
+                {
+
+                    int r = task5537(reader);
+                    Console.WriteLine(r);
+                }
+
                 
-                return;
             }
 
-            switch(a)
+            catch(FormatException)
             {
-                case 2:
-                    filename = "test2.txt";
-                    break;
-
-                case 3:
-                    filename = "test3.txt";
-                    break;
-
-                default:
-                    Console.WriteLine("Сообщение об ошибке");
-                    return;
+                Console.WriteLine("Некорректное число");
             }
+   
 
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
+        }
 
-            StreamReader reader = new StreamReader(filename);
+        static int task5537(StreamReader reader)
+        {
+            int m = 0;
 
             while (!reader.EndOfStream)
             {
-                b = reader.ReadLine();
+                string b = reader.ReadLine();
 
-                string[] arr = b.Split();
+                int l = int.Parse(b);
 
-                int v = int.Parse(arr[0]);
-                int x = int.Parse(arr[1]);
-                int c = int.Parse(arr[2]);
-                int z = int.Parse(arr[3]);
+                if(l<1000||l>9999)
+                {
+                    Exception e = new Exception("Значение А вне диапазона от 1000 до 9999");
+                    throw e;
+                }
 
+                char[] arr = b.ToCharArray();
+                char v = arr[0];
+                char x = arr[1];
+                char c = arr[2];
+                char z = arr[3];
 
+                
 
-                if(v==x||x==c||c==z)
+                if (v == x || x == c || c == z)
                 {
                     m++;
                 }
 
             }
 
-            Console.WriteLine(m);
+            return m;
         }
+
+
 
 
     }
