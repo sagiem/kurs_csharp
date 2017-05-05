@@ -147,7 +147,40 @@ namespace Задача_2
             Console.WriteLine(task3669(-2, 600));
             Console.WriteLine(task3669(50, 24) - 2421409269157986304L);
 
+            Console.WriteLine("task5951");
+            Console.WriteLine(task5951() - 630);
+
+            Console.WriteLine("task6580");
+            Console.WriteLine(task6580(15, 27) - 5915);
+            Console.WriteLine(task6580(25, 44) - 24470);
+            Console.WriteLine(task6580(80, 100) - 170870);
+            Console.WriteLine(task6580(3000, 24) - 414561584);
+
+            Console.WriteLine("task5969");
+            Console.WriteLine(task5969(8, 13));
+            Console.WriteLine(task5969(25, 44) - 105);
+            Console.WriteLine(task5969(80, 100) - 273);
+            Console.WriteLine(task5969(300, 24) - 6279);
+
+            Console.WriteLine("task8696");
+            Console.WriteLine(task8696() - 69);
+
+            Console.WriteLine("task4265");
+            Console.WriteLine(task4265("sABCD"));
+            Console.WriteLine(task4265("Uxyz"));
+            Console.WriteLine(task4265("s"));
+            Console.WriteLine(task4265("F123"));
+            Console.WriteLine(task4265("Sopqr"));
+
+            Console.WriteLine("task9925");
+            int result9925 = task9925("один, два, три, четыре, пять");
+            Console.WriteLine(result9925 - 5);
+            Console.WriteLine(task9925("янв,фев,март") - 3);
+            Console.WriteLine(task9925("один") - 1);
+
         }
+
+
 
 
 
@@ -402,7 +435,130 @@ namespace Задача_2
             }
             return s;
         }
+
+        static int task5951()
+        {
+            int a = 20;
+            int b = 40;
+            int s = 0;
+
+            while (a <= b)
+            {
+                s = a * a * a + s;
+                a++;
+            }
+
+            return s;
+
+        }
+
+        static int task6580(int a, int b)
+        {
+            int s = 0;
+
+            if (b < a)
+            {
+                while (b <= a)
+                {
+                    s = b * b + s;
+                    b++;
+                }
+            }
+
+
+            else
+            {
+                while (a <= b)
+                {
+                    s = a * a + s;
+                    a++;
+                }
+            }
+
+            return s;
+        }
+
+        static int task5969(int a, int b)
+        {
+            int s = 0;
+
+            if (b < a)
+            {
+                b = b - 1;
+                while (b < a)
+                {
+                    b++;
+                    if (b % 7 == 0)
+                    {
+                        s = s + b;
+                    }
+                }
+            }
+
+            if (a < b)
+            {
+                a = a - 1;
+                while (a < b)
+                {
+                    a++;
+                    if (a % 7 == 0)
+                    {
+                        s = s + a;
+                    }                   
+                }
+            }
+
+            return s;
+        }
+
+        static int task8696()
+        {
+            int a = 100, b = 1000;
+            int s = 0;
+            int i = 0;
+
+
+
+            a = a - 1;
+            while (a < b)
+            {
+                a++;
+
+
+                if (a % 13 == 0)
+                {
+                    s++;
+                }
+
+            }
+
+            return s;
+        }
+
+        static string task4265(string s)
+        {
+            
+            if (s.StartsWith("s"))
+            {
+                return s=s.ToLower();
+            }
+            else
+                if (s.StartsWith("U"))
+                {
+                    return s=s.ToUpper();
+                }
+
+            return s;
+        }
+
+        static int task9925(string s)
+        {
+            string[] arr = s.Split(',');
+            return arr.Length;
+        }
+
     }
 
 }
+
 
