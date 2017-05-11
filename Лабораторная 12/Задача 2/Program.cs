@@ -178,6 +178,15 @@ namespace Задача_2
             Console.WriteLine(task9925("янв,фев,март") - 3);
             Console.WriteLine(task9925("один") - 1);
 
+            Console.WriteLine("task3946");
+            String[] in3946 = { "1 2 3 4 1", "1 2 3 4 1 3 4 4 4 4", "" };
+            double[] out3946 = { 2.2, 3, 0 };
+            for (int i = 0; i < in3946.Length; i++)
+            {
+                double result = task3946(in3946[i]);
+                Console.WriteLine("{0:F6} ({0:F6})", result, out3946[i]);
+            }
+
         }
 
 
@@ -555,6 +564,21 @@ namespace Задача_2
         {
             string[] arr = s.Split(',');
             return arr.Length;
+        }
+
+        static double task3946(string a)
+        {
+            string[] arr = a.Split();
+            double b = 0;
+            int x = 0;
+            while (x <= arr.Length)
+            {
+                double s = double.Parse(arr[x]);
+                b = b + s;
+                x++;
+            }
+
+            return b / arr.Length;
         }
 
     }
