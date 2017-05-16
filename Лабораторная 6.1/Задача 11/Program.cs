@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Задача_8
+namespace Задача_11
 {
     class Program
     {
@@ -13,15 +13,16 @@ namespace Задача_8
             string s = Console.ReadLine();
             string[] arr = s.Split();
             string[] arr1 = new string[arr.Length];
-            for (int i = 0; i < arr.Length-1; i++)
+            int x= arr.Length-1;
+
+            for(int i=0; i<arr.Length; i++)
             {
-                arr1[i + 1] = arr[i];
-        
 
+                arr1[i] = arr[x];
+                x--;       
             }
-            arr1[0] = arr[arr.Length-1];
 
-            foreach (string item in arr1)
+            foreach(string item in arr1)
             {
                 Console.WriteLine(item);
             }
