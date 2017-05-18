@@ -10,32 +10,44 @@ namespace Задача_20
     {
         static void Main(string[] args)
         {
-            
+
             string s = Console.ReadLine();
             string[] arr = s.Split();
-            int[] arr1 = new int[arr.Length];
+            int[] array = new int[arr.Length];
 
-
-            for (int i = 0; i < arr.Length; i++)
+            for(int l=0;l<arr.Length; l++)
             {
-                int a = int.Parse(arr[i]);
+                array[l] = int.Parse(arr[l]);
+            }
 
-                for (int l = 1; l < arr.Length; l++)
-                {
-                    int x = int.Parse(arr[l]);
-                    if (a < x)
+
+            
+
+
+            bool changed = true;
+
+            while (changed)
+            {
+                changed = false;
+
+                for (int i = 0; i < array.Length - 1; i++)
+                    if (array[i] > array[i + 1])
                     {
-                        arr1[i] = a;
+                        int tmp = array[i];
+                        array[i] = array[i + 1];
+                        array[i + 1] = tmp;
+                        changed = true;
                     }
-                }
             }
 
-            foreach(int item in arr1)
+
+
+            foreach (int item in array)
             {
-                Console.Write(item+" ");
+                Console.Write(item + " ");
             }
 
-           
+
         }
     }
 }
