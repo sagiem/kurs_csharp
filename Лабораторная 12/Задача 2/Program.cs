@@ -179,12 +179,40 @@ namespace Задача_2
             Console.WriteLine(task9925("один") - 1);
 
             Console.WriteLine("task3946");
-            String[] in3946 = { "1 2 3 4 1", "1 2 3 4 1 3 4 4 4 4", "" };
+            String[] in3946 = { "1 2 3 4 1", "1 2 3 4 1 3 4 4 4 4"};
             double[] out3946 = { 2.2, 3, 0 };
             for (int i = 0; i < in3946.Length; i++)
             {
                 double result = task3946(in3946[i]);
                 Console.WriteLine("{0:F6} ({0:F6})", result, out3946[i]);
+            }
+
+            Console.WriteLine("task7035");
+            String[] in7035 = {"1 2 3 4 5 6","3 4 1 2 3 4 1 2 3 1 2","4 2 3 4 3 2","4 4 4 4 4 3 8 9","4 4 4 4","4 3"};
+            int[] out7035 = { 1, 1, 2, 3, 4, 3 };
+            for (int i = 0; i < in7035.Length; i++)
+            {
+                int result = task7035(in7035[i]);
+                Console.WriteLine("{0} ({1})", result, out7035[i]);
+            }
+
+            Console.WriteLine("task4283");
+            int[] in4283k = { 3, 5, 2, 1 };
+            String[] in4283s = {"1 2 3 4 1 2","1 2 3 4 1 2 3 4 1 2 3","3 2 2 2 2 2","4 4 4 4 4 4"};
+            int[] out4283 = { 1, 0, 5, 0 };
+            for (int i = 0; i < in4283k.Length; i++)
+            {
+                int result = task4283(in4283k[i], in4283s[i]);
+                Console.WriteLine("{0} ({1})", result, out4283[i]);
+            }
+
+            Console.WriteLine("task9182");
+            String[] in9182 = {"1 2 3 4 5 6","1 2 3 1 2 6","1 1 1 1 1 1"};
+            int[] out9182 = { 6, 4, 1 };
+            for (int i = 0; i < out9182.Length; i++)
+            {
+                int result = task9182(in9182[i]);
+                Console.WriteLine("{0} ({1})", result, out9182[i]);
             }
 
         }
@@ -570,17 +598,71 @@ namespace Задача_2
         {
             string[] arr = a.Split();
             double b = 0;
-            int x = 0;
-            while (x <= arr.Length)
+
+            for (int i = 0; i < arr.Length; i++ )
             {
-                double s = double.Parse(arr[x]);
+                double s = double.Parse(arr[i]);
                 b = b + s;
-                x++;
+                
             }
 
             return b / arr.Length;
         }
 
+        static int task7035(string s)
+        {
+            string[] arr = s.Split();
+            int x = int.Parse(arr[0]);
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                int a = int.Parse(arr[i]);
+
+                if (a < x)
+                {
+                    x = a;
+                }
+
+            }
+
+            return x;
+        }
+
+        static int task4283(int k, string s)
+        {
+           
+            string[] arr = s.Split();
+            int m = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int x = int.Parse(arr[i]);
+                if (k == x)
+                {
+                    m++;
+                }
+            }
+
+            return m;
+        }
+
+        static int task9182(string s)
+        {
+            
+            string[] arr = s.Split();
+
+
+            HashSet<int> rng = new HashSet<int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int x = int.Parse(arr[i]);
+                rng.Add(x);
+            }
+
+            return rng.Count;
+        }
     }
 
 }

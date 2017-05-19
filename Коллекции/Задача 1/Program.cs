@@ -10,33 +10,33 @@ namespace Задача_1
     {
         static void Main(string[] args)
         {
-            //List<int> lst = new List<int>();
-            //lst.Add(17);
-            //lst.Add(19);
-            //lst.Add(23);
-            //lst.Insert(0, 29);
-            //lst.Remove(18);
-            //System.Console.WriteLine(lst.Count); 
-            //Console.WriteLine(lst[0]);
-            //Console.WriteLine(string.Join(";", lst));
-            //SortedList<Int32,String> sort = new SortedList<Int32, String>();
-            //sort.Add(23, "a");
-            //sort.Add(19, "b");
-            //Console.WriteLine(String.Join(" ", sort));
+            List<int> lst = new List<int>();
+            lst.Add(17);
+            lst.Add(19);
+            lst.Add(23);
+            lst.Insert(0, 29);
+            lst.Remove(18);
+            System.Console.WriteLine(lst.Count);
+            Console.WriteLine(lst[0]);
+            Console.WriteLine(string.Join(";", lst));
+            SortedList<Int32, String> sort = new SortedList<Int32, String>();
+            sort.Add(23, "a");
+            sort.Add(19, "b");
+            Console.WriteLine(String.Join(" ", sort));
 
-            //for(int i=0; i<lst.Count; i++)
-            //{
-            //    int item = lst[i];
-            //    Console.WriteLine(item);
-            //}
+            for (int i = 0; i < lst.Count; i++)
+            {
+                int item = lst[i];
+                Console.WriteLine(item);
+            }
 
-            //foreach (int item in lst)
-            //{
-            //    Console.WriteLine(item);
-                
-            //}
-            //Console.WriteLine();
-            //Console.WriteLine();
+            foreach (int item in lst)
+            {
+                Console.WriteLine(item);
+
+            }
+            Console.WriteLine();
+            Console.WriteLine();
 
             HashSet<int> rng = new HashSet<int>();
             rng.Add(17);

@@ -16,6 +16,7 @@ namespace Задача_1
             Console.WriteLine("Введите номер теста");
             string index = Console.ReadLine();
             string filename = "test" + index + ".txt";
+            int i = 0;
 
             if(! File.Exists(filename))
             {
@@ -33,8 +34,11 @@ namespace Задача_1
             while(!reader.EndOfStream)
             {
                 Console.Write(", " + reader.ReadLine());
-            }
+                i++;
 
+            }
+            Console.WriteLine();
+            Console.WriteLine(" i="+i);
             reader.Close();
         }
     }
