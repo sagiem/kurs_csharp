@@ -31,11 +31,11 @@ namespace Задача_4
         {
             string filename = "test" + index + ".txt";
 
-            //if (!File.Exists(filename))
-            //{
-            //    Exception e = new Exception("Файл не существует");
-            //    throw e;
-            //}
+            if (!File.Exists(filename))
+            {
+                Exception e = new Exception("Файл не существует");
+                throw e;
+            }
 
             StreamReader reader = new StreamReader(filename);
 
