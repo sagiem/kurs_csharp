@@ -27,7 +27,7 @@ namespace Задача_3
             Interval r = new Interval();
             r.a = 5;
             r.b = 7;
-            double fact = l.Intersects(r);
+            Boolean fact = l.Intersects(r);
             Console.WriteLine(fact);
         }
 
