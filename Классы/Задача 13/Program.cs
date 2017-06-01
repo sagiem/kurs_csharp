@@ -114,10 +114,10 @@ namespace Задача_13
             try
             {
                 Interval range = new Interval(13, 151);
-                Console.WriteLine("Длина интервала: "+ range.Length);
+                Console.WriteLine("Длина интервала: "+ range.Length());
                 range.Squeeze(41);
                 Console.WriteLine("Интервал успешно изменен");
-                Console.WriteLine("Длина интервала: " + range.Length);
+                Console.WriteLine("Длина интервала: " + range.Length());
                 Console.WriteLine(range.Print());
             }
             catch (ArgumentException ex)

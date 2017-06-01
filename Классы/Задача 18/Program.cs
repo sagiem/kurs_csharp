@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Задача_17
+namespace Задача_18
 {
     class Program
     {
@@ -27,6 +27,7 @@ namespace Задача_17
                 Console.WriteLine(ex.Message);
             }
         }
+
         public static void ProcessFile(string filename, Raschet r)
         {
             if (!File.Exists(filename))

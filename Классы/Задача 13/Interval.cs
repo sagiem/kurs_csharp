@@ -8,11 +8,15 @@ namespace Задача_13
 {
     class Interval
     {
-        public int a;
-        public int b;
+         private int a;
+         private int b;
 
         public Interval(int a, int b)
         {
+            if (a > b)
+            {
+                throw new ArgumentException("Некорректный интервал");
+            }
             this.a = a;
             this.b = b;
         }
@@ -20,11 +24,6 @@ namespace Задача_13
         public bool Contains(int x)
         {
             bool m = true;
-
-            if (a > b)
-            {
-                throw new ArgumentException("Некорректный интервал");
-            }
 
             if (!(x > a && x < b))
             {
@@ -36,55 +35,29 @@ namespace Задача_13
 
         public string Print()
         {
-            if (a > b)
-            {
-                throw new ArgumentException("Некорректный интервал");
-            }
-
             return String.Format("[{0}:{1}]", this.a, this.b);
         }
 
         public void Slide(int x)
         {
-            if (a > b)
-            {
-                throw new ArgumentException("Некорректный интервал");
-            }
-
             this.a = this.a + x;
             this.b = this.b + x;
         }
 
         public void Squeeze(int x)
         {
-            if (a > b)
-            {
-                throw new ArgumentException("Некорректный интервал");
-            }
-
             if ((this.b - this.a) < x)
             {
                 throw new ArgumentException("Невозможно уменьшить интервал на указанную длину");
             }
 
             this.b = this.b - x;
-
         }
 
         public int Length()
         {
-            if (this.a > this.b)
-            {
-                throw new ArgumentException("Некорректный интервал");
-            }
-
             return this.b - this.a;
         }
-        
-
-
-
-
     }
 
 }
