@@ -19,6 +19,11 @@ namespace Задача_17
         {
             string filename = "test" + a + ".csv";
 
+            if(! File.Exists(filename))
+            {
+                throw new ArgumentException("Файл не существует");
+            }
+
             StreamReader reader = new StreamReader(filename);
             while (!reader.EndOfStream)
             {
@@ -28,6 +33,11 @@ namespace Задача_17
                 string r = (reader.ReadLine());
                 string[] arr = r.Split(';');
                 int k = int.Parse(arr[1]);
+
+                if(arr.Length!=2)
+                {
+                    throw new ArgumentException("Некорректный формат");
+                }
 
                 if (arr[0] == "shiftX")
                 {
@@ -74,10 +84,7 @@ namespace Задача_17
                 }
 
 
-                //else
-                //{
-                //    throw new ArgumentException("Некорректный формат");
-                //}
+                
             }
         }
 
