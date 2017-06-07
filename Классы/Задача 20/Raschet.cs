@@ -33,7 +33,7 @@ namespace Задача_20
                     dir.Add(arr[2], Rec);
                 }
 
-                if (arr[1] == "circle")
+                else if (arr[1] == "circle")
                 {
                     int cx = int.Parse(arr[3]);
                     int y = int.Parse(arr[4]);
@@ -51,7 +51,7 @@ namespace Задача_20
                 }
             }
 
-            if (arr.Length != 3)
+            if (arr.Length != 3 && arr.Length != 6 && arr.Length != 7)
             {
                 throw new ArgumentException("Некорректный формат");
             }
@@ -59,7 +59,6 @@ namespace Задача_20
             if (dir.ContainsKey(arr[1]))
             {
                 Rectangle figure = dir[arr[1]];
-                Circle figure1 = dir1[arr[1]];
                 int value = int.Parse(arr[2]);
 
                 if (action == "shiftX")
@@ -85,8 +84,6 @@ namespace Задача_20
                     throw new ArgumentException("Некорректное действие: " + action);
                 }
 
-
-                throw new ArgumentException("Некорректный формат");
             }
 
             if (dir1.ContainsKey(arr[1]))
