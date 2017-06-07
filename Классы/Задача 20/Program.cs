@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Задача_19
+namespace Задача_20
 {
     class Program
     {
@@ -19,7 +19,7 @@ namespace Задача_19
             try
             {
                 ProcessFile(filename, r);
-                Console.WriteLine(r.Print());
+                //Console.WriteLine(r.Print());
             }
             catch (ArgumentException ex)
             {
