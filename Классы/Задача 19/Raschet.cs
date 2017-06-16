@@ -71,14 +71,5 @@ namespace Задача_19
             }    
         }
 
-
-
-        //public void Print()
-        //{
-        //    foreach (KeyValuePair<string, string> item in dir)
-        //    {
-        //        Console.WriteLine(item);
-        //    }
-        //}
     }
 }
