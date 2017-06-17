@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Задача_20
 {
-    class Rectangle
+    class Rectangle : IMovable
     {
         private int x = 0;
         private int y = 0;
@@ -64,5 +64,11 @@ namespace Задача_20
             }
             this.m = this.m++;
         }
+
+        public override string ToString()
+        {
+            return "действий: " + m + " {\"x\":" + x + ",\"y\":" + y + ",\"w\":" + w + ",\"h\":" + h + "}";
+        }
+
     }
 }
