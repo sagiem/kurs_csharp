@@ -19,29 +19,29 @@ namespace Задача_17
         {
             if (action == "shiftX")
             {
-                shiftX(value);   
+                shiftX(value);
             }
             else if (action == "shiftY")
             {
-                shiftY(value);   
+                shiftY(value);
             }
             else if (action == "stretchX")
             {
-                stretchX(value);   
+                stretchX(value);
             }
             else if (action == "stretchY")
             {
-                stretchY(value);  
+                stretchY(value);
             }
 
             else
             {
-                throw new ArgumentException("Некорректное действие: "+ action);
+                throw new ArgumentException("Некорректное действие: " + action);
             }
             this.m++;
         }
 
-        
+
 
         public void shiftX(int a)
         {
@@ -55,8 +55,8 @@ namespace Задача_17
         public void shiftY(int a)
         {
             this.y = this.y + a;
-            if(this.y < 0)
-                {
+            if (this.y < 0)
+            {
                 throw new ArgumentException("Координата Y должна быть неотрицательной");
             }
         }
@@ -79,12 +79,13 @@ namespace Задача_17
             }
         }
 
-        public string Print()
+        public override string ToString()
         {
-            return "действий: " + m + " {\"x\":" + x + ",\"y\":" + y + ",\"w\":" + width + ",\"h\":" + height +"}";
+            return "действий: " + m + " {\"x\":" + x + ",\"y\":" + y + ",\"w\":" + width + ",\"h\":" + height + "}";
         }
 
-       
+
+
 
 
     }

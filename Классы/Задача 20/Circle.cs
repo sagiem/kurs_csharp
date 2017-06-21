@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Задача_20
 {
-    class Circle
+    class Circle : IMovable
     {
         private int cx = 0;
         private int y = 0;
@@ -64,5 +64,11 @@ namespace Задача_20
             }
             this.m = this.m++;
         }
+
+        public override string ToString()
+        {
+            return "действий: " + m + " {\"cx\":" + cx + ",\"y\":" + y + ",\"r\":" +r+"}";
+        }
+
     }
 }

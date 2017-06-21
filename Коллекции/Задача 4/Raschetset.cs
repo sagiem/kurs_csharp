@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Задача_4
 {
-    class Raschetlist
+    class Raschetset
     {
-        List<Points> rng = new List<Points>();
+        HashSet<Points> rng = new HashSet<Points>();
 
 
         public void Selectaction(string line)
@@ -25,35 +25,23 @@ namespace Задача_4
             int x = int.Parse(arr[0]);
             int y = int.Parse(arr[1]);
             string w = arr[2];
-
-            for (int i = 0; i < rng.Count(); i++)
-            {
-                Points item = rng[i];
-                
-                if(item.x==x&&item.y==y)
-                {
-                    m++;
-                }
-            }
-
-            if (m == 0)
+            Points point = new Points(x, y, w);
+            if (rng.Contains(point) == false)
             {
                 Points Rec = new Points(x, y, w);
                 rng.Add(Rec);
-                m = 0;
+
             }
 
         }
 
         public void print()
         {
-
-
-            for (int i = 0; i < rng.Count(); i++)
+            foreach (Points items in rng)
             {
-                Points item = rng[i];
-                Console.WriteLine("{\"x\":"+item.x+ ", \"y\":"+item.y+ ", \"color\":\""+item.color+"\"}");
+                Console.WriteLine("{\"x\":" + items.x + ", \"y\":" + items.y + ", \"color\":\"" + items.color + "\"}");
             }
         }
     }
 }
+

@@ -19,7 +19,7 @@ namespace Задача_17
             try
             {
                 ProcessFile(filename, r);
-                Console.WriteLine(r.Print());
+                Console.WriteLine(r);
             }
             catch (ArgumentException ex)
             {

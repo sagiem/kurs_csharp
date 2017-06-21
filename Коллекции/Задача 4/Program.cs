@@ -14,7 +14,7 @@ namespace Задача_4
             Console.WriteLine("Введите номер теста");
             string a = Console.ReadLine();
             string filename = "test" + a + ".csv";
-            Raschet r = new Raschet();
+            Raschetset r = new Raschetset();
 
             try
             {
@@ -29,7 +29,7 @@ namespace Задача_4
             }
         }
 
-        public static void ProcessFile(string filename, Raschet r)
+        public static void ProcessFile(string filename, Raschetset r)
         {
             if (!File.Exists(filename))
             {

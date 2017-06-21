@@ -19,7 +19,13 @@ namespace Задача_20
             try
             {
                 ProcessFile(filename, r);
-                //Console.WriteLine(r.Print());
+                var dict2 = r.getcollection();
+                
+                foreach(string key in dict2.Keys)
+                {
+                    Console.Write(key+" ");
+                    Console.WriteLine(dict2[key]);
+                }
             }
             catch (ArgumentException ex)
             {

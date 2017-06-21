@@ -8,8 +8,8 @@ namespace Задача_20
 {
     class Raschet
     {
-        Dictionary<string, Rectangle> dir = new Dictionary<string, Rectangle>();
-        Dictionary<string, Circle> dir1 = new Dictionary<string, Circle>();
+        
+        Dictionary<string, IMovable> dir2 = new Dictionary<string, IMovable>();
 
         public void Selectaction(string line)
         {
@@ -30,7 +30,7 @@ namespace Задача_20
                     int w = int.Parse(arr[5]);
                     int h = int.Parse(arr[6]);
                     Rectangle Rec = new Rectangle(x, y, w, h);
-                    dir.Add(arr[2], Rec);
+                    dir2.Add(arr[2], Rec);
                 }
 
                 else if (arr[1] == "circle")
@@ -39,8 +39,8 @@ namespace Задача_20
                     int y = int.Parse(arr[4]);
                     int r = int.Parse(arr[5]);
 
-                    Circle Reccir = new Circle(cx, y, r);
-                    dir1.Add(arr[2], Reccir);
+                    Circle Reccir = new Circle(cx, y, r);;
+                    dir2.Add(arr[2], Reccir);
 
                 }
 
@@ -56,40 +56,13 @@ namespace Задача_20
                 throw new ArgumentException("Некорректный формат");
             }
 
-            if (dir.ContainsKey(arr[1]))
+            
+            
+
+            if (dir2.ContainsKey(arr[1]))
             {
-                Rectangle figure = dir[arr[1]];
-                int value = int.Parse(arr[2]);
 
-                if (action == "shiftX")
-                {
-
-                    figure.shiftX(value);
-                }
-                else if (action == "shiftY")
-                {
-                    figure.shiftY(value);
-                }
-                else if (action == "stretchX")
-                {
-                    figure.stretchX(value);
-                }
-                else if (action == "stretchY")
-                {
-                    figure.stretchY(value);
-                }
-
-                else
-                {
-                    throw new ArgumentException("Некорректное действие: " + action);
-                }
-
-            }
-
-            if (dir1.ContainsKey(arr[1]))
-            {
-                
-                Circle figure1 = dir1[arr[1]];
+                IMovable figure1 = dir2[arr[1]];
                 int value = int.Parse(arr[2]);
 
                 if (action == "shiftX")
@@ -114,12 +87,16 @@ namespace Задача_20
                 {
                     throw new ArgumentException("Некорректное действие: " + action);
                 }
-
-
-                throw new ArgumentException("Некорректный формат");
+               
             }
-
-
+         
         }
+
+        public Dictionary<string, IMovable> getcollection()
+        {
+            return dir2;
+        }
+
+
     }
 }
