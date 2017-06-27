@@ -19,7 +19,7 @@ namespace Business.DAO
                 Name = "Принцесса Нури",
                 GroupId = Guid.Parse("ac2a862a9f8440d597b8c4188b07c4ed"),
                 Unit = "PACK",
-                Weight = 0.1f,
+                Weight = 0.1m,
                 Cost = 12m,
                 Quantity = 100
             });
@@ -28,16 +28,17 @@ namespace Business.DAO
                 Name = "Нескафе Классик",
                 GroupId = Guid.Parse("9fca6f4e5e3547d6b59b2325c2fa3fe7"),
                 Unit = "TIN_POT",
-                Weight = 0.05f,
+                Weight = 0.05m,
                 Cost = 52m,
                 Quantity = 25
             });
+
             result.Add(new Product(Guid.Parse("b96d685c96c44ab4bcd8c4b212b78895"))
             {
                 Name = "кекс Абрикосовый",
                 GroupId = Guid.Parse("043dd2bbe1524149bf13eb5ae9dde160"),
                 Unit = "UNIT",
-                Weight = 0.2f,
+                Weight = 0.2m,
                 Cost = 24m,
                 Quantity = 12
             });
@@ -45,8 +46,7 @@ namespace Business.DAO
         }
         //Получить товар по идентификатору
         public Product getById(Guid id)
-        {
-            throw new NotImplementedException();
+        {        
             if (Guid.Parse("cc873c2777004d4ea4c8569feb6bb93f").Equals(id))
             {
                 return new Product(Guid.Parse("cc873c2777004d4ea4c8569feb6bb93f"))
@@ -54,7 +54,7 @@ namespace Business.DAO
                     Name = "Принцесса Нури",
                     GroupId = Guid.Parse("ac2a862a9f8440d597b8c4188b07c4ed"),
                     Unit = "PACK",
-                    Weight = 0.1f,
+                    Weight = 0.1m,
                     Cost = 12m,
                     Quantity = 100
                 };
@@ -66,7 +66,7 @@ namespace Business.DAO
                     Name = "Нескафе Классик",
                     GroupId = Guid.Parse("9fca6f4e5e3547d6b59b2325c2fa3fe7"),
                     Unit = "TIN_POT",
-                    Weight = 0.05f,
+                    Weight = 0.05m,
                     Cost = 52m,
                     Quantity = 25
                 };
@@ -78,7 +78,7 @@ namespace Business.DAO
                     Name = "кекс Абрикосовый",
                     GroupId = Guid.Parse("043dd2bbe1524149bf13eb5ae9dde160"),
                     Unit = "UNIT",
-                    Weight = 0.2f,
+                    Weight = 0.2m,
                     Cost = 24m,
                     Quantity = 12
                 };

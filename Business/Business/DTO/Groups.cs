@@ -6,25 +6,20 @@ using System.Threading.Tasks;
 
 namespace Business.DTO
 {
-    public class Product
+    public class Groups
     {
-        public Product(Guid id)//Вынуждаем передавать идентификатор при создании объекта
+        public Groups(Guid id)//Вынуждаем передавать идентификатор при создании объекта
         {
             this.Id = id;
         }
 
         public Guid Id { get; private set; } //Запрещаем изменение
         public String Name { get; set; }
-        public String Unit { get; set; }
-        public Guid GroupId { get; set; }
-        public Decimal Cost { get; set; }
-        public int Quantity { get; set; }
-        public Decimal Weight { get; set; }
+        
 
         public override string ToString()
         {
             return Name;
         }
-
     }
 }
