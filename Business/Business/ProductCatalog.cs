@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Business
 {
-    public partial class EmployeesCatalog : Form
+    public partial class ProductCatalog : Form
     {
-        public EmployeesCatalog()
+        public ProductCatalog()
         {
             InitializeComponent();
         }
+
         //Обработчик загрузки формы
         private void ProductCatalog_Load(object sender, EventArgs e)
         {
@@ -53,5 +54,15 @@ namespace Business
             MessageBox.Show("Пользователь нажал кнопку \"Удалить\"");
         }
 
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

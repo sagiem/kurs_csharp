@@ -54,6 +54,7 @@
             this.listProducts.Name = "listProducts";
             this.listProducts.Size = new System.Drawing.Size(233, 199);
             this.listProducts.TabIndex = 1;
+            this.listProducts.SelectedIndexChanged += new System.EventHandler(this.listProducts_SelectedIndexChanged);
             // 
             // gboxProductCard
             // 
@@ -177,6 +178,7 @@
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = " Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -186,6 +188,7 @@
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = " Сохранить ";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnRefresh
             // 
@@ -195,6 +198,7 @@
             this.btnRefresh.TabIndex = 10;
             this.btnRefresh.Text = "Обновить";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnAdd
             // 
@@ -204,6 +208,7 @@
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // ProductCatalog
             // 
@@ -217,7 +222,7 @@
             this.Name = "ProductCatalog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Справочник товаров";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.ProductCatalog_Load);
             this.gboxProductCard.ResumeLayout(false);
             this.gboxProductCard.PerformLayout();
             this.ResumeLayout(false);

@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Business
 {
-    public partial class EmployeesCatalog : Form
+    public partial class ClientCatalog : Form
     {
-        public EmployeesCatalog()
+        public ClientCatalog()
         {
             InitializeComponent();
         }
+
         //Обработчик загрузки формы
         private void ProductCatalog_Load(object sender, EventArgs e)
         {

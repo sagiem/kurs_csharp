@@ -40,20 +40,20 @@
             this.lblHireType = new System.Windows.Forms.Label();
             this.lblNotes = new System.Windows.Forms.Label();
             this.gboxEmployeesCard = new System.Windows.Forms.GroupBox();
+            this.txtBirthDate = new System.Windows.Forms.TextBox();
+            this.cmbHireType = new System.Windows.Forms.ComboBox();
+            this.cmbMarriage = new System.Windows.Forms.ComboBox();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtPostalIndex = new System.Windows.Forms.TextBox();
+            this.txtFatherName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.txtFatherName = new System.Windows.Forms.TextBox();
-            this.txtPostalIndex = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtNotes = new System.Windows.Forms.TextBox();
-            this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.cmbMarriage = new System.Windows.Forms.ComboBox();
-            this.cmbHireType = new System.Windows.Forms.ComboBox();
-            this.txtBirthDate = new System.Windows.Forms.TextBox();
             this.gboxEmployeesCard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,7 @@
             this.listEmployees.Name = "listEmployees";
             this.listEmployees.Size = new System.Drawing.Size(363, 342);
             this.listEmployees.TabIndex = 0;
+            this.listEmployees.SelectedIndexChanged += new System.EventHandler(this.listProducts_SelectedIndexChanged);
             // 
             // lblFirstName
             // 
@@ -186,94 +187,20 @@
             this.gboxEmployeesCard.TabStop = false;
             this.gboxEmployeesCard.Text = "Карточка сотрудника";
             // 
-            // btnRefresh
+            // txtBirthDate
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(12, 358);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 12;
-            this.btnRefresh.Text = "Обновить";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.txtBirthDate.Location = new System.Drawing.Point(173, 148);
+            this.txtBirthDate.Name = "txtBirthDate";
+            this.txtBirthDate.Size = new System.Drawing.Size(121, 20);
+            this.txtBirthDate.TabIndex = 22;
             // 
-            // btnAdd
+            // cmbHireType
             // 
-            this.btnAdd.Location = new System.Drawing.Point(300, 358);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 13;
-            this.btnAdd.Text = "Добавить";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(6, 348);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "Сохранить";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(261, 348);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 12;
-            this.btnDelete.Text = "Удалить";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(173, 18);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(121, 20);
-            this.txtFirstName.TabIndex = 13;
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(173, 55);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(121, 20);
-            this.txtLastName.TabIndex = 14;
-            // 
-            // txtFatherName
-            // 
-            this.txtFatherName.Location = new System.Drawing.Point(173, 85);
-            this.txtFatherName.Name = "txtFatherName";
-            this.txtFatherName.Size = new System.Drawing.Size(121, 20);
-            this.txtFatherName.TabIndex = 15;
-            // 
-            // txtPostalIndex
-            // 
-            this.txtPostalIndex.Location = new System.Drawing.Point(173, 205);
-            this.txtPostalIndex.Name = "txtPostalIndex";
-            this.txtPostalIndex.Size = new System.Drawing.Size(121, 20);
-            this.txtPostalIndex.TabIndex = 16;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(173, 236);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(121, 20);
-            this.txtAddress.TabIndex = 17;
-            // 
-            // txtNotes
-            // 
-            this.txtNotes.Location = new System.Drawing.Point(173, 294);
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(121, 20);
-            this.txtNotes.TabIndex = 18;
-            // 
-            // cmbGender
-            // 
-            this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Items.AddRange(new object[] {
-            "М",
-            "Ж"});
-            this.cmbGender.Location = new System.Drawing.Point(173, 117);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(121, 21);
-            this.cmbGender.TabIndex = 19;
+            this.cmbHireType.FormattingEnabled = true;
+            this.cmbHireType.Location = new System.Drawing.Point(173, 267);
+            this.cmbHireType.Name = "cmbHireType";
+            this.cmbHireType.Size = new System.Drawing.Size(121, 21);
+            this.cmbHireType.TabIndex = 21;
             // 
             // cmbMarriage
             // 
@@ -286,20 +213,98 @@
             this.cmbMarriage.Size = new System.Drawing.Size(121, 21);
             this.cmbMarriage.TabIndex = 20;
             // 
-            // cmbHireType
+            // cmbGender
             // 
-            this.cmbHireType.FormattingEnabled = true;
-            this.cmbHireType.Location = new System.Drawing.Point(173, 267);
-            this.cmbHireType.Name = "cmbHireType";
-            this.cmbHireType.Size = new System.Drawing.Size(121, 21);
-            this.cmbHireType.TabIndex = 21;
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "М",
+            "Ж"});
+            this.cmbGender.Location = new System.Drawing.Point(173, 117);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(121, 21);
+            this.cmbGender.TabIndex = 19;
             // 
-            // txtBirthDate
+            // txtNotes
             // 
-            this.txtBirthDate.Location = new System.Drawing.Point(173, 148);
-            this.txtBirthDate.Name = "txtBirthDate";
-            this.txtBirthDate.Size = new System.Drawing.Size(121, 20);
-            this.txtBirthDate.TabIndex = 22;
+            this.txtNotes.Location = new System.Drawing.Point(173, 294);
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(121, 20);
+            this.txtNotes.TabIndex = 18;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(173, 236);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(121, 20);
+            this.txtAddress.TabIndex = 17;
+            // 
+            // txtPostalIndex
+            // 
+            this.txtPostalIndex.Location = new System.Drawing.Point(173, 205);
+            this.txtPostalIndex.Name = "txtPostalIndex";
+            this.txtPostalIndex.Size = new System.Drawing.Size(121, 20);
+            this.txtPostalIndex.TabIndex = 16;
+            // 
+            // txtFatherName
+            // 
+            this.txtFatherName.Location = new System.Drawing.Point(173, 85);
+            this.txtFatherName.Name = "txtFatherName";
+            this.txtFatherName.Size = new System.Drawing.Size(121, 20);
+            this.txtFatherName.TabIndex = 15;
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(173, 55);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(121, 20);
+            this.txtLastName.TabIndex = 14;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(173, 18);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(121, 20);
+            this.txtFirstName.TabIndex = 13;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(261, 348);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Удалить";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(6, 348);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Сохранить";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(12, 358);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.Text = "Обновить";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(300, 358);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "Добавить";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // EmployeesCatalog
             // 
@@ -313,6 +318,7 @@
             this.Name = "EmployeesCatalog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Справочник сотрудников";
+            this.Load += new System.EventHandler(this.ProductCatalog_Load);
             this.gboxEmployeesCard.ResumeLayout(false);
             this.gboxEmployeesCard.PerformLayout();
             this.ResumeLayout(false);

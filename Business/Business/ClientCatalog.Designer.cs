@@ -35,9 +35,9 @@
             this.txtCheckingAccount = new System.Windows.Forms.TextBox();
             this.txtINN = new System.Windows.Forms.TextBox();
             this.gboxClientCard = new System.Windows.Forms.GroupBox();
-            this.listClients = new System.Windows.Forms.ListBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.listClients = new System.Windows.Forms.ListBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gboxClientCard.SuspendLayout();
@@ -108,13 +108,15 @@
             this.gboxClientCard.TabStop = false;
             this.gboxClientCard.Text = "Карточка клиента";
             // 
-            // listClients
+            // btnDelete
             // 
-            this.listClients.FormattingEnabled = true;
-            this.listClients.Location = new System.Drawing.Point(13, 13);
-            this.listClients.Name = "listClients";
-            this.listClients.Size = new System.Drawing.Size(196, 173);
-            this.listClients.TabIndex = 7;
+            this.btnDelete.Location = new System.Drawing.Point(271, 192);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Удалить";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -124,15 +126,16 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnDelete
+            // listClients
             // 
-            this.btnDelete.Location = new System.Drawing.Point(271, 192);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "Удалить";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.listClients.FormattingEnabled = true;
+            this.listClients.Location = new System.Drawing.Point(13, 13);
+            this.listClients.Name = "listClients";
+            this.listClients.Size = new System.Drawing.Size(196, 173);
+            this.listClients.TabIndex = 7;
+            this.listClients.SelectedIndexChanged += new System.EventHandler(this.listProducts_SelectedIndexChanged);
             // 
             // btnRefresh
             // 
@@ -142,6 +145,7 @@
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.Text = "Обновить";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnAdd
             // 
@@ -151,6 +155,7 @@
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // ClientCatalog
             // 
@@ -164,6 +169,7 @@
             this.Name = "ClientCatalog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Справочник клиентов";
+            this.Load += new System.EventHandler(this.ProductCatalog_Load);
             this.gboxClientCard.ResumeLayout(false);
             this.gboxClientCard.PerformLayout();
             this.ResumeLayout(false);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Business
 {
-    public partial class EmployeesCatalog : Form
+    public partial class ProductGroups : Form
     {
-        public EmployeesCatalog()
+        public ProductGroups()
         {
             InitializeComponent();
         }
