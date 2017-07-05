@@ -40,9 +40,9 @@
             this.lblHireType = new System.Windows.Forms.Label();
             this.lblNotes = new System.Windows.Forms.Label();
             this.gboxEmployeesCard = new System.Windows.Forms.GroupBox();
+            this.chkMarriage = new System.Windows.Forms.CheckBox();
             this.txtBirthDate = new System.Windows.Forms.TextBox();
             this.cmbHireType = new System.Windows.Forms.ComboBox();
-            this.cmbMarriage = new System.Windows.Forms.ComboBox();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -54,6 +54,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.txtPosition = new System.Windows.Forms.TextBox();
             this.gboxEmployeesCard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +64,7 @@
             this.listEmployees.FormattingEnabled = true;
             this.listEmployees.Location = new System.Drawing.Point(12, 10);
             this.listEmployees.Name = "listEmployees";
-            this.listEmployees.Size = new System.Drawing.Size(363, 342);
+            this.listEmployees.Size = new System.Drawing.Size(363, 381);
             this.listEmployees.TabIndex = 0;
             this.listEmployees.SelectedIndexChanged += new System.EventHandler(this.listProducts_SelectedIndexChanged);
             // 
@@ -150,7 +152,7 @@
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(26, 294);
+            this.lblNotes.Location = new System.Drawing.Point(24, 335);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(70, 13);
             this.lblNotes.TabIndex = 10;
@@ -158,9 +160,11 @@
             // 
             // gboxEmployeesCard
             // 
+            this.gboxEmployeesCard.Controls.Add(this.txtPosition);
+            this.gboxEmployeesCard.Controls.Add(this.lblPosition);
+            this.gboxEmployeesCard.Controls.Add(this.chkMarriage);
             this.gboxEmployeesCard.Controls.Add(this.txtBirthDate);
             this.gboxEmployeesCard.Controls.Add(this.cmbHireType);
-            this.gboxEmployeesCard.Controls.Add(this.cmbMarriage);
             this.gboxEmployeesCard.Controls.Add(this.cmbGender);
             this.gboxEmployeesCard.Controls.Add(this.txtNotes);
             this.gboxEmployeesCard.Controls.Add(this.txtAddress);
@@ -182,10 +186,21 @@
             this.gboxEmployeesCard.Controls.Add(this.lblMarriage);
             this.gboxEmployeesCard.Location = new System.Drawing.Point(381, 10);
             this.gboxEmployeesCard.Name = "gboxEmployeesCard";
-            this.gboxEmployeesCard.Size = new System.Drawing.Size(342, 382);
+            this.gboxEmployeesCard.Size = new System.Drawing.Size(342, 420);
             this.gboxEmployeesCard.TabIndex = 11;
             this.gboxEmployeesCard.TabStop = false;
             this.gboxEmployeesCard.Text = "Карточка сотрудника";
+            // 
+            // chkMarriage
+            // 
+            this.chkMarriage.AutoSize = true;
+            this.chkMarriage.Location = new System.Drawing.Point(173, 178);
+            this.chkMarriage.Name = "chkMarriage";
+            this.chkMarriage.Size = new System.Drawing.Size(66, 17);
+            this.chkMarriage.TabIndex = 23;
+            this.chkMarriage.Text = "В браке";
+            this.chkMarriage.UseVisualStyleBackColor = true;
+            this.chkMarriage.CheckedChanged += new System.EventHandler(this.chkMarriage_CheckedChanged);
             // 
             // txtBirthDate
             // 
@@ -197,21 +212,13 @@
             // cmbHireType
             // 
             this.cmbHireType.FormattingEnabled = true;
+            this.cmbHireType.Items.AddRange(new object[] {
+            "TEMP",
+            "CONST"});
             this.cmbHireType.Location = new System.Drawing.Point(173, 267);
             this.cmbHireType.Name = "cmbHireType";
             this.cmbHireType.Size = new System.Drawing.Size(121, 21);
             this.cmbHireType.TabIndex = 21;
-            // 
-            // cmbMarriage
-            // 
-            this.cmbMarriage.FormattingEnabled = true;
-            this.cmbMarriage.Items.AddRange(new object[] {
-            "Да",
-            "Нет"});
-            this.cmbMarriage.Location = new System.Drawing.Point(173, 178);
-            this.cmbMarriage.Name = "cmbMarriage";
-            this.cmbMarriage.Size = new System.Drawing.Size(121, 21);
-            this.cmbMarriage.TabIndex = 20;
             // 
             // cmbGender
             // 
@@ -226,7 +233,7 @@
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(173, 294);
+            this.txtNotes.Location = new System.Drawing.Point(173, 328);
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(121, 20);
             this.txtNotes.TabIndex = 18;
@@ -268,7 +275,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(261, 348);
+            this.btnDelete.Location = new System.Drawing.Point(267, 391);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 12;
@@ -278,7 +285,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(6, 348);
+            this.btnSave.Location = new System.Drawing.Point(6, 391);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 11;
@@ -288,7 +295,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(12, 358);
+            this.btnRefresh.Location = new System.Drawing.Point(12, 407);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 12;
@@ -298,7 +305,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(300, 358);
+            this.btnAdd.Location = new System.Drawing.Point(300, 401);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 13;
@@ -306,11 +313,27 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Location = new System.Drawing.Point(23, 296);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(65, 13);
+            this.lblPosition.TabIndex = 24;
+            this.lblPosition.Text = "Должность";
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.Location = new System.Drawing.Point(173, 296);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(121, 20);
+            this.txtPosition.TabIndex = 25;
+            // 
             // EmployeesCatalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 400);
+            this.ClientSize = new System.Drawing.Size(780, 442);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.gboxEmployeesCard);
@@ -339,7 +362,6 @@
         private System.Windows.Forms.Label lblHireType;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.GroupBox gboxEmployeesCard;
-        private System.Windows.Forms.ComboBox cmbMarriage;
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.TextBox txtAddress;
@@ -353,5 +375,8 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox cmbHireType;
         private System.Windows.Forms.TextBox txtBirthDate;
+        private System.Windows.Forms.CheckBox chkMarriage;
+        private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.Label lblPosition;
     }
 }

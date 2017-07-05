@@ -12,9 +12,19 @@ namespace Business.DAO
         public List<Groups> getList()
         {
             List<Groups> result = new List<Groups>();
-            result.Add(new Groups(Guid.Parse("cc873c2777004d4ea4c8569feb6bb93b"))
+            result.Add(new Groups(Guid.Parse("ac2a862a9f8440d597b8c4188b07c4ed"))
             {
                 Name = "Чай"              
+            });
+
+            result.Add(new Groups(Guid.Parse("9fca6f4e5e3547d6b59b2325c2fa3fe7"))
+            {
+                Name = "Кофе"
+            });
+
+            result.Add(new Groups(Guid.Parse("043dd2bbe1524149bf13eb5ae9dde160"))
+            {
+                Name = "Кондитерские изделия"
             });
 
             return result;
@@ -23,11 +33,29 @@ namespace Business.DAO
 
         public Groups getById(Guid id)
         {
-            if (Guid.Parse("cc873c2777004d4ea4c8569feb6bb93b").Equals(id))
+            if (Guid.Parse("ac2a862a9f8440d597b8c4188b07c4ed").Equals(id))
             {
-                return new Groups(Guid.Parse("cc873c2777004d4ea4c8569feb6bb93b"))
+                return new Groups(Guid.Parse("ac2a862a9f8440d597b8c4188b07c4ed"))
                 {
                     Name = "Чай"                  
+                };
+
+            }
+
+            if (Guid.Parse("9fca6f4e5e3547d6b59b2325c2fa3fe7").Equals(id))
+            {
+                return new Groups(Guid.Parse("9fca6f4e5e3547d6b59b2325c2fa3fe7"))
+                {
+                    Name = "Кофе"
+                };
+
+            }
+
+            if (Guid.Parse("043dd2bbe1524149bf13eb5ae9dde160").Equals(id))
+            {
+                return new Groups(Guid.Parse("043dd2bbe1524149bf13eb5ae9dde160"))
+                {
+                    Name = "Кондитерские изделия"
                 };
 
             }
