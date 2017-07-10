@@ -19,7 +19,7 @@ namespace Business.DTO
         public Guid GroupId { get; set; }
         public Decimal Cost { get; set; }
         public int Quantity { get; set; }
-        public Decimal Weight { get; set; }
+        public float Weight { get; set; }
 
         public override string ToString()
         {
