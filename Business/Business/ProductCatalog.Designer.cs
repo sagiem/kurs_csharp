@@ -44,15 +44,16 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtFilter = new System.Windows.Forms.TextBox();
             this.gboxProductCard.SuspendLayout();
             this.SuspendLayout();
             // 
             // listProducts
             // 
             this.listProducts.FormattingEnabled = true;
-            this.listProducts.Location = new System.Drawing.Point(12, 10);
+            this.listProducts.Location = new System.Drawing.Point(12, 49);
             this.listProducts.Name = "listProducts";
-            this.listProducts.Size = new System.Drawing.Size(233, 199);
+            this.listProducts.Size = new System.Drawing.Size(233, 160);
             this.listProducts.TabIndex = 1;
             this.listProducts.SelectedIndexChanged += new System.EventHandler(this.listProducts_SelectedIndexChanged);
             // 
@@ -210,11 +211,19 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(12, 12);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(233, 20);
+            this.txtFilter.TabIndex = 0;
+            // 
             // ProductCatalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 249);
+            this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.gboxProductCard);
@@ -226,6 +235,7 @@
             this.gboxProductCard.ResumeLayout(false);
             this.gboxProductCard.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -247,6 +257,7 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox cmbProductGroup;
+        private System.Windows.Forms.TextBox txtFilter;
     }
 }
 

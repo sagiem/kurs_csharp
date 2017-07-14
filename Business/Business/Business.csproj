@@ -74,6 +74,7 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="presenter\ProductCatalogPresenter.cs" />
     <Compile Include="ProductCatalog.cs">
       <SubType>Form</SubType>
     </Compile>

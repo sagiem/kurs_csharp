@@ -37,6 +37,8 @@ namespace Business
                 current = (Client)listClients.SelectedItem;//"Текущий товар" указывает на выбранный элемент
                 //Заполняем поля на форме
                 txtName.Text = current.Name;
+                txtCheckingAccount.Text = current.checkingaccount;
+                txtINN.Text = current.inn;
             }
         }
 
@@ -57,6 +59,8 @@ namespace Business
         {
             //Сбор данных из полей формы
             current.Name = txtName.Text;
+            current.checkingaccount = txtCheckingAccount.Text;
+            current.inn = txtINN.Text;
 
             if (clientDao.update(current))//Если метод обновление товара вернул "истина"
             {
